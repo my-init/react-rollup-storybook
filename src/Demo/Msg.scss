@@ -1,0 +1,13 @@
+.Msg {
+  $color: #9494fa;
+  transition: all 0.2s ease-in-out;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid $color;
+  color: $color;
+  &:hover {
+    color: white;
+    background: $color;
+  }
+}

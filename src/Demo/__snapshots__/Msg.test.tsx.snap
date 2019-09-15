@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Msg /> it matches the snapshot 1`] = `
+<div
+  className="Msg"
+>
+  Test MSG...
+  <p
+    style={
+      Object {
+        "color": "#cfcfcf",
+        "textAlign": "right",
+      }
+    }
+  >
+    <i>
+      ———— lovely tail❤️
+    </i>
+  </p>
+</div>
+`;
+
+exports[`<Msg /> it should have right props 1`] = `
+Object {
+  "children": Array [
+    "Test MSG...",
+    <p
+      style={
+        Object {
+          "color": "#cfcfcf",
+          "textAlign": "right",
+        }
+      }
+    >
+      <i>
+        ———— lovely tail❤️
+      </i>
+    </p>,
+  ],
+  "className": "Msg",
+}
+`;

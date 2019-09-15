@@ -1,0 +1,96 @@
+{
+  "name": "react-rollup-storybook",
+  "version": "0.1.0",
+  "description": "react ui lib on typescript, storybook, rollup.",
+  "main": "dist/lib/index.js",
+  "module": "dist/es/index.js",
+  "browser": "dist/browser/index.js",
+  "repository": "git@github.com:my-init/react-rollup-storybook.git",
+  "author": "NoName4Me <anich.evas@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "test": "jest -c scripts/jest/jest.config.js",
+    "test:ui": "jest -c scripts/jest/jest.ui.config.js",
+    "test:cov": "jest --coverage",
+    "lint": "eslint src --ext .ts,.tsx,.js,.jsx",
+    "lint:fix": "yarn lint --fix",
+    "format": "prettier",
+    "tsc": "tsc -b",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "cz": "./node_modules/cz-customizable/standalone.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+    }
+  },
+  "lint-staged": {
+    "src/**/!(*test).{tsx,js,ts,jsx}": [
+      "npm run lint:fix",
+      "npm run format",
+      "git add"
+    ],
+    "src/**/*.scss": [
+      "npm run format",
+      "git add"
+    ]
+  },
+  "peerDependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@storybook/addon-actions": "^5.2.0-rc.2",
+    "@storybook/addon-docs": "^5.2.0-rc.2",
+    "@storybook/addon-links": "^5.2.0-rc.2",
+    "@storybook/addons": "^5.2.0-rc.2",
+    "@storybook/preset-typescript": "^1.1.0",
+    "@storybook/react": "^5.2.0-rc.2",
+    "@types/enzyme": "^3.10.3",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/jest": "^24.0.18",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-test-renderer": "^16.9.0",
+    "@types/storybook__react": "^4.0.2",
+    "@typescript-eslint/eslint-plugin": "^2.1.0",
+    "@typescript-eslint/parser": "^2.1.0",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-jest": "^24.9.0",
+    "babel-loader": "^8.0.6",
+    "cz-customizable": "^6.2.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.4.0",
+    "eslint": "^6.3.0",
+    "eslint-plugin-react": "^7.14.3",
+    "husky": "^3.0.5",
+    "jest": "^24.9.0",
+    "jest-image-snapshot": "^2.11.0",
+    "jest-puppeteer": "^4.3.0",
+    "jsdom": "^15.1.1",
+    "jsdom-global": "^3.0.2",
+    "lint-staged": "^9.2.5",
+    "puppeteer": "^1.19.0",
+    "react": "^16.9.0",
+    "react-docgen-typescript-loader": "^3.2.0",
+    "react-test-renderer": "^16.9.0",
+    "rollup": "^1.20.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-sass": "^1.2.2",
+    "rollup-plugin-terser": "^5.1.1",
+    "rollup-plugin-typescript2": "^0.24.0",
+    "sass-loader": "^8.0.0",
+    "ts-jest": "^24.0.2",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2"
+  }
+}
